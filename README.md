@@ -1,3 +1,4 @@
+
 [![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
@@ -9,11 +10,11 @@ This set of libraries makes integration to YDigital Media tacking system a breez
 
 
 ## Conversion Lib
-This library is intended to be used to track conversions in landing pages of campaigns made by YDigital Media and will allow clients to notify YDigital Media about a conversion. To start using the library you'll need to.
+This library is intended to be used to track conversions in landing pages of campaigns developed by YDigital Media and will allow clients to notify YDigital Media about a conversion. To start using the library you'll need to.
 
 1. [Include the library in your page](#include-the-library-in-your-page);
-2. [Change some configuration options (optional)](#configuration-options)
-4. [Learn how to notify YDigital Media about a conversion](#make-a-conversion).
+2. [Change some configuration options (optional)](#configuration-options);
+3. [Learn how to notify YDigital Media about a conversion](#make-a-conversion).
 
 **Note:** This documentation assumes that you have basic knowledge of Javascript and HTML.
 
@@ -21,11 +22,11 @@ This library is intended to be used to track conversions in landing pages of cam
 
 #### Include the library in your page
 The script you're about to include will look for all relevant parameters and save them for future use, that is, when a conversion takes place.
-Include the script (at cdn.ydigitalmedia.com/conversion/tracker/v3/yd-conversion.js) at the end of the body tag of your HTML document, ie:
+Include the script (at cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js) at the end of the body tag of your HTML document, ie:
 ```
         ...
         <div>Some content</div>
-        <script type="text/javascript" src="//cdn.ydigitalmedia.com/conversion/tracker/v3/yd-conversion.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js"></script>
     </body>
 </html>
 ```
@@ -57,6 +58,7 @@ Example:
         <div>Some content</div>
         <script type="text/javascript">
             window.YD = {
+                logging: true,
                 conversion: {
                     ydUrlParameter: 'yd',
                     clickIdUrlParameter: 'ydClick',
@@ -64,7 +66,7 @@ Example:
                 }
             };
         </script>
-        <script type="text/javascript" src="//cdn.ydigitalmedia.com/conversion/tracker/v3/yd-conversion.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js"></script>
     </body>
 </html>
 ```
@@ -88,7 +90,7 @@ List of available configuration directives:
 
 Example:
 ```
-<script type="text/javascript" src="//cdn.ydigitalmedia.com/conversion/tracker/v3/yd-conversion.js?ydParam=yd"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js?ydParam=yd"></script>
 ```
 You can also pass any of this configuration parameters in the top link of the page.
 
@@ -124,7 +126,7 @@ YD.trackConversion().then(function(event){
 
 
 #### Track events
-This function will notify YDigital Media about an event. Use this method if you need to track events that the user performed in your LP.
+This function will notify YDigital Media about a particular event. Use this method if you need to track events that the user performed in your LP.
 ```
 YD.trackEvent(eventName, action = 'click', useDOM = false)
 ```
@@ -169,3 +171,11 @@ YD.getClickId()
 ```
 ###### Returns
 Returns the detected click ID or null if none was detected.
+
+
+
+
+## License
+#### Attribution-NonCommercial-NoDerivatives 4.0 International
+[creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+

@@ -5,7 +5,7 @@
 YDigital Media Client Side Libraries
 ====
 
-This set of libraries makes integration to YDigital Media tacking system a breeze.
+This set of libraries makes integration to YDigital Media systems a breeze.
 
 
 
@@ -16,7 +16,7 @@ This library is intended to be used to track conversions in landing pages of cam
 2. [Change some configuration options (optional)](#configuration-options);
 3. [Learn how to notify YDigital Media about a conversion](#make-a-conversion).
 
-**Note:** This documentation assumes that you have basic knowledge of Javascript and HTML.
+**Note:** This documentation assumes that you have basic knowledge of JavaScript and HTML.
 
 
 
@@ -39,6 +39,13 @@ Almost every part of the lib can be configured. Bellow there's a list of all the
 
 ##### By declaring the YD variable
 List of available configuration directives:
+
+* **logging** (Boolean, false)
+	Console logging switch. In test hosts it defaults to true.
+
+
+* **testHosts** (Array, ['localhost', '10.0.0.169'])
+	Array with a list of the test hosts.
 
 
 * **conversion.ydUrlParameter** (string, 'yd')
@@ -76,6 +83,9 @@ Example:
 ##### By passing parameters in the URL
 List of available configuration directives:
 
+* **logging** (boolean, false)
+	Console logging switch. In test hosts it defaults to true.
+
 
 * **ydParam** (string, 'yd')
 	Expected YD URL parameter name on input
@@ -90,7 +100,7 @@ List of available configuration directives:
 
 Example:
 ```
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js?ydParam=yd"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js?logging=1"></script>
 ```
 You can also pass any of this configuration parameters in the top link of the page.
 
@@ -126,7 +136,7 @@ YD.trackConversion().then(function(event){
 
 
 #### Track events
-This function will notify YDigital Media about a particular event. Use this method if you need to track events that the user performed in your LP.
+This function will send events to clicks.ydigitalmedia.com. Use this method if you need to track events that the user performed in the client LP.
 ```
 YD.trackEvent(eventName, action = 'click', useDOM = false)
 ```
@@ -178,4 +188,3 @@ Returns the detected click ID or null if none was detected.
 ## License
 #### Attribution-NonCommercial-NoDerivatives 4.0 International
 [creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-

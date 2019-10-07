@@ -164,6 +164,36 @@ YD.trackEvent().then(function(event){
 
 
 
+#### Push event to the global Google Tag Manager
+This function triggers / sends an event to the loaded Google Tag Manager via dataLayer.push (please see: https://developers.google.com/tag-manager/devguide) and it also triggers a common JavaScript custom event ([CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent)).
+```
+YD.triggerEvent(data, eventName)
+```
+###### Parameters
+* **data**    - Optional, adicional data to send. You can also send a form element to the function and his content will be serialized and sent.
+* **eventName** - Optional event name, which is the name / label of the event performed by the user. By omission the default value is 'YD-LEAD-SUBMIT'
+
+###### Returns
+Returns a Promise object that resolves immediately (**not** on event send) . Read more about promises in here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+###### Examples
+```
+// Simple example
+YD.triggerEvent();
+
+// Complete example
+YD.triggerEvent({"foo": "bar"}, 'My event name');
+
+YD.triggerEvent(document.getElementById('my_form_id'), 'My event name');
+
+// example with a callback
+YD.triggerEvent({}).then(function(event){
+    window.alert('Success!');
+});
+```
+
+
+
 #### Get tracking-code
 Obtain the current tracking-code
 ```

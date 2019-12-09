@@ -22,11 +22,11 @@ This library is intended to be used to track conversions in landing pages of cam
 
 #### Include the library in your page
 The script you're about to include will look for all relevant parameters and save them for future use, that is, when a conversion takes place.
-Include the script (at cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js) at the end of the body tag of your HTML document, ie:
+Include the script (at pkg.ydigitalmedia.com/conversion@4/yd-conversion.js) at the end of the body tag of your HTML document, ie:
 ```
         ...
         <div>Some content</div>
-        <script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js"></script>
+        <script type="text/javascript" src="//pkg.ydigitalmedia.com/conversion@4/yd-conversion.js"></script>
     </body>
 </html>
 ```
@@ -73,7 +73,7 @@ Example:
                 }
             };
         </script>
-        <script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js"></script>
+        <script type="text/javascript" src="//pkg.ydigitalmedia.com/conversion@4/yd-conversion.js"></script>
     </body>
 </html>
 ```
@@ -100,7 +100,7 @@ List of available configuration directives:
 
 Example:
 ```
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/ydigitalmedia/conversion@4/yd-conversion.js?logging=1"></script>
+<script type="text/javascript" src="//pkg.ydigitalmedia.com/conversion@4/yd-conversion.js?logging=1"></script>
 ```
 You can also pass any of this configuration parameters in the top link of the page.
 
